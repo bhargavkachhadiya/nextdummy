@@ -10,3 +10,4 @@ export async function GET() {
   return NextResponse.json(result);
 }
 
+export async function POST(req, res) { let payload = await req.json(); await mongoose.connect(mongodbconnection); let student = new Students(payload); let result = await student.save(); return NextResponse.json(result); }
